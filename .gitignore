@@ -1,0 +1,41 @@
+# Entorno virtual
+.venv/
+venv/
+
+# Archivos de Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Archivos de configuración de VS Code
+.vscode/
+
+# Archivos de logs y temporales
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Archivos de salida
+*.db
+*.sqlite3
+*.csv
+*.tsv
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de Jupyter (por si los usas después)
+.ipynb_checkpoints/
+
+# Entornos de Conda (si no usas conda, puedes omitirlo)
+.env/
+conda-meta/
+
+# Configuraciones de PyInstaller
+build/
+dist/
+*.spec
