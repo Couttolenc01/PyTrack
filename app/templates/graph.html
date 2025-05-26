@@ -9,12 +9,17 @@
   </head>
   <body class="bg-gray-50 min-h-screen">
     <!-- Navbar -->
-    <nav class="bg-white shadow px-6 py-4 flex justify-between items-center">
-      <div class="text-xl font-bold text-indigo-600">MiEmpresa</div>
-      <div class="space-x-4">
-        <a href="/proyecto" class="text-gray-700 hover:text-indigo-600">Proyecto</a>
-        <a href="/unidad" class="text-gray-700 hover:text-indigo-600">Tipo de unidad</a>
-        <a href="/temporada" class="text-gray-700 hover:text-indigo-600">Temporada</a>
+    <nav class="bg-white shadow px-6 py-4">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <div class="text-xl font-bold text-indigo-600">PyTrackAnalytics</div>
+        <div class="flex-1 flex justify-center space-x-8 text-sm font-medium">
+          <a href="/proyecto" class="text-gray-700 hover:text-indigo-600">Proyecto</a>
+          <a href="/unidad" class="text-gray-700 hover:text-indigo-600">Tipo de unidad</a>
+          <a href="/temporada" class="text-gray-700 hover:text-indigo-600">Temporada</a>
+        </div>
+        <div>
+          <a href="/insights" class="ml-4 px-4 py-2 rounded bg-indigo-600 text-white hover:bg-indigo-700 transition">Insights</a>
+        </div>
       </div>
     </nav>
 
@@ -30,8 +35,9 @@
         <label for="cpkRange" class="block text-gray-700 font-medium mb-2">
           Rango rentable de CPK
         </label>
-        <div class="flex justify-between text-sm text-gray-500">
-          <span>$0</span>
+        <div class="flex justify-between text-sm text-gray-500 mb-1">
+          <span id="cpkValue">$0</span>
+          <span>$50</span>
           <span>$100</span>
         </div>
         <input
@@ -39,7 +45,7 @@
           min="0"
           max="100"
           value="50"
-          class="w-full mt-1"
+          class="w-full"
           id="cpkRange"
         />
       </div>
