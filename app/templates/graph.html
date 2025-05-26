@@ -1,21 +1,50 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gráfica con Plotly</title>
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-100 text-gray-900 flex items-center justify-center min-h-screen">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Impacto del CPK</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  </head>
+  <body class="bg-gray-50 min-h-screen">
+    <!-- Navbar -->
+    <nav class="bg-white shadow px-6 py-4 flex justify-between items-center">
+      <div class="text-xl font-bold text-indigo-600">MiEmpresa</div>
+      <div class="space-x-4">
+        <a href="/proyecto" class="text-gray-700 hover:text-indigo-600">Proyecto</a>
+        <a href="/unidad" class="text-gray-700 hover:text-indigo-600">Tipo de unidad</a>
+        <a href="/temporada" class="text-gray-700 hover:text-indigo-600">Temporada</a>
+      </div>
+    </nav>
 
-  <div class="container mx-auto px-4">
-    <h1 class="text-3xl font-bold mb-6 text-center">Gráfica de Ejemplo</h1>
-    <div class="bg-white shadow-md rounded p-6">
-      <!-- Aquí se inserta la gráfica desde Flask -->
-      {{ plot_div | safe }}
-    </div>
-  </div>
+    <!-- Main content -->
+    <main class="max-w-5xl mx-auto p-6 mt-8 bg-white shadow rounded">
+      <h2 class="text-2xl font-semibold mb-4">Ganancias y CPK</h2>
 
-</body>
+      <!-- Gráfica -->
+      <div id="graph" class="w-full h-96"></div>
+
+      <!-- Slider -->
+      <div class="mt-8">
+        <label for="cpkRange" class="block text-gray-700 font-medium mb-2">
+          Rango rentable de CPK
+        </label>
+        <div class="flex justify-between text-sm text-gray-500">
+          <span>$0</span>
+          <span>$100</span>
+        </div>
+        <input
+          type="range"
+          min="0"
+          max="100"
+          value="50"
+          class="w-full mt-1"
+          id="cpkRange"
+        />
+      </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/graph.js') }}"></script>
+  </body>
 </html>
